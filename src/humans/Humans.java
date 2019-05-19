@@ -1,8 +1,8 @@
 package humans;
 
-import religion.Religion;
-
+import religion.Religions;
+//possible Humans<A,B,C....>
 public class Humans{
 	public Color color;
-	public Religion religion;
+	public Religions religion;
 }
