@@ -1,6 +1,6 @@
 package religion;
 
-public interface Religion {
+public interface ReligionBehavior {
 	public abstract void pray();
 	public abstract void believe();
 }

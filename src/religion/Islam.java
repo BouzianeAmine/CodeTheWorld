@@ -1,6 +1,6 @@
 package religion;
 
-public class Islam extends Religions{
+public class Islam implements Religions{
 
 	@Override
 	public void pray() {
@@ -11,7 +11,7 @@ public class Islam extends Religions{
 	@Override
 	public void believe() {
 		// TODO Auto-generated method stub
-		
+		System.out.println("He believe's in Allah ");
 	}
 
 }

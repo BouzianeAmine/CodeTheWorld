@@ -1,6 +1,6 @@
 package religion;
 
-public class Jewish extends Religions{
+public class Judaism implements Religions{
 
 	@Override
 	public void pray() {

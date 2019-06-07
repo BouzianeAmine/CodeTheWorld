@@ -4,5 +4,5 @@ public interface HumanBehavior {
 	public void eat();
 	public void sleep();
 	public void piss();
-	
+	public void shit();
 }
