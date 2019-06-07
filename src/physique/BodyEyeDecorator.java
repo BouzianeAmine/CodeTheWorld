@@ -11,5 +11,10 @@ public class BodyEyeDecorator implements BodyDecorator {
 		return this.body.shape()+" Eye";
 		
 	}
+	@Override
+	public void action() {
+		// TODO Auto-generated method stub
+		
+	}
 
 }
