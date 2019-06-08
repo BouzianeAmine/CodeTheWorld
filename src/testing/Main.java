@@ -24,6 +24,7 @@ public class Main {
 		amineBodyControl.on();
 		amineBodyControl.stop();*/
 		BodyBrainDecorator brain=new BodyBrainDecorator((BodyDecorator)amine.body);
+		
 		brain.commandOn();
 		brain.commandOff();
 		//brain.update();
