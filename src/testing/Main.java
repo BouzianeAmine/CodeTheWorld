@@ -4,11 +4,10 @@ import humans.Color;
 import humans.Guy;
 import humans.HumanSportsBehavior;
 import humans.Humans;
+import physique.BodyBrainDecorator;
 import physique.BodyDecorator;
 import physique.BodyEyeDecorator;
-import physique.Command;
 import physique.GuyBody;
-import physique.IControl;
 import religion.Islam;
 
 public class Main {
@@ -21,9 +20,13 @@ public class Main {
 		System.out.println(amine.color);
 		((HumanSportsBehavior) amine.behave).running();
 		System.out.println(amine.body.shape());
-		IControl amineBodyControl=new Command((BodyDecorator) amine.body);
+		/*IControl amineBodyControl=new Command((BodyDecorator) amine.body);
 		amineBodyControl.on();
-		amineBodyControl.stop();
+		amineBodyControl.stop();*/
+		BodyBrainDecorator brain=new BodyBrainDecorator((BodyDecorator)amine.body);
+		brain.commandOn();
+		brain.commandOff();
+		//brain.update();
 	}
 
 }

@@ -1,5 +1,7 @@
 package physique;
 
-public interface Body {
+import observation.IObservable;
+
+public interface Body extends IObservable{
 	public String shape();
 }
