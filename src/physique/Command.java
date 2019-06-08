@@ -13,6 +13,6 @@ public class Command implements IControl{
 	@Override
 	public void stop() {
 		// TODO Auto-generated method stub
-		
+		this.body.unaction();
 	}
 }
