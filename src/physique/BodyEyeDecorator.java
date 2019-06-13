@@ -8,7 +8,7 @@ import observation.IObserver;
 //import javafx.collections.ObservableList;
 
 public class BodyEyeDecorator implements BodyDecorator,IObservable {
-	public Body body;
+	public Body body; // i should make a list to add the parts of the body but not, here i should just add this actual part
 	public ArrayList<IObserver> observers;
 	public String state;
 	//public ObservableList<BodyDecorator> parts;
