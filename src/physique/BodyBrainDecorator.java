@@ -2,7 +2,7 @@ package physique;
 
 import observation.IObserver;
 
-public class BodyBrainDecorator implements IObserver{
+public class BodyBrainDecorator implements IObserver,IControl{
 	public BodyDecorator body;
 	public BodyBrainDecorator(BodyDecorator bdeye) {
 		this.body=bdeye;
