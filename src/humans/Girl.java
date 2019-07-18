@@ -10,4 +10,7 @@ public class Girl extends Humans{
 		// TODO Auto-generated constructor stub
 	}
 
+	public String toString() {
+		return Class.class.getName()+super.toString();
+	}
 }

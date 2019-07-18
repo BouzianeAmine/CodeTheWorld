@@ -14,7 +14,7 @@ public class Guy extends Humans {
 
 	@Override
 	public String toString() {
-		return "Guy "+super.toString();
+		return Class.class.getName()+super.toString();
 	}
 
 }

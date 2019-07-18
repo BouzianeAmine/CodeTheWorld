@@ -1,5 +1,13 @@
 package testing;
 
+import Course.Course;
+import Course.Module;
+import Course.Note;
+import Course.Session;
+import chatBoot.Message;
+import chatBoot.Publisher;
+import chatBoot.Subscriber;
+import chatBoot.TextMessage;
 import humans.Color;
 import humans.Guy;
 import humans.HumanSportsBehavior;
@@ -24,10 +32,24 @@ public class Main {
 		amineBodyControl.on();
 		amineBodyControl.stop();*/
 		BodyBrainDecorator brain=new BodyBrainDecorator((BodyDecorator)amine.body);
-		
-		brain.commandOn();
-		brain.commandOff();
+		brain.on();
+		brain.stop();
 		//brain.update();
+		
+		Module math=new Course("Algebra",new Session(new Note("Morning session", "EDF IS A BITCH")));
+		math.SetName("Math");
+		((Course)math).sessions.add((new Session(new Note("3chia session","EDF IS ALWAYS A BITCH"))));
+		((Course)math).sessions.stream().forEach(session->{
+			((Session)session).notes.stream().forEach(note->{
+				System.out.println(note.text);
+			});
+		});
+		Subscriber sub1=new Subscriber();
+		sub1.subscribe(Publisher.getInstance());
+		Publisher.getInstance().publish(new TextMessage("hello"));
+		sub1.receive().stream().forEach(message->System.out.println(message.value()));
+		Publisher.getInstance().publish(new TextMessage("world !!"));
+		sub1.receive().stream().forEach(message->System.out.println(message.value()));
 	}
 
 }
