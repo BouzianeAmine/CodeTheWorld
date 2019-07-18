@@ -44,12 +44,17 @@ public class Main {
 				System.out.println(note.text);
 			});
 		});
+		
+		//Publish subscribe aspect i don't kow why but i guess cauz i read the JMS article, it's not actually a chatboot it's one main publisher and subscribers  cauz i used the singleton pattern   
 		Subscriber sub1=new Subscriber();
+		Subscriber sub2=new Subscriber();
 		sub1.subscribe(Publisher.getInstance());
+		sub2.subscribe(Publisher.getInstance());
 		Publisher.getInstance().publish(new TextMessage("hello"));
-		sub1.receive().stream().forEach(message->System.out.println(message.value()));
+		sub1.receive().stream().forEach(message->message.value());
 		Publisher.getInstance().publish(new TextMessage("world !!"));
-		sub1.receive().stream().forEach(message->System.out.println(message.value()));
+		sub1.receive().stream().forEach(message->message.value());
+		sub2.receive().stream().forEach(message->message.value());
 	}
 
 }
