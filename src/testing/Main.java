@@ -4,10 +4,6 @@ import Course.Course;
 import Course.Module;
 import Course.Note;
 import Course.Session;
-import chatBoot.Message;
-import chatBoot.Publisher;
-import chatBoot.Subscriber;
-import chatBoot.TextMessage;
 import humans.Color;
 import humans.Guy;
 import humans.HumanSportsBehavior;
@@ -16,6 +12,9 @@ import physique.BodyBrainDecorator;
 import physique.BodyDecorator;
 import physique.BodyEyeDecorator;
 import physique.GuyBody;
+import publisherBot.Publisher;
+import publisherBot.Subscriber;
+import publisherBot.TextMessage;
 import religion.Islam;
 
 public class Main {
@@ -51,10 +50,10 @@ public class Main {
 		sub1.subscribe(Publisher.getInstance());
 		sub2.subscribe(Publisher.getInstance());
 		Publisher.getInstance().publish(new TextMessage("hello"));
-		sub1.receive().stream().forEach(message->message.value());
+		sub1.receive().stream().forEach(message->System.out.println(message.value()));
 		Publisher.getInstance().publish(new TextMessage("world !!"));
-		sub1.receive().stream().forEach(message->message.value());
-		sub2.receive().stream().forEach(message->message.value());
+		sub1.receive().stream().forEach(message->System.out.println(message.value()));
+		sub2.receive().stream().forEach(message->System.out.println(message.value()));
 	}
 
 }

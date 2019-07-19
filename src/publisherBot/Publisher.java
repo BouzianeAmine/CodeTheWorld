@@ -1,9 +1,8 @@
-package chatBoot;
+package publisherBot;
 
-import java.util.ArrayList;
 
 public class Publisher implements PublisherBehavior{
-	private Message message=null;
+	private Message<?> message=null;
     private static volatile Publisher instance = null;
 
 	private Publisher() {}
@@ -22,12 +21,12 @@ public class Publisher implements PublisherBehavior{
          return Publisher.instance;
 	}
 	
-	public void publish(Message value) {
+	public void publish(Message<?> value) {
 		this.message=value;
 	}
 
 	@Override
-	public Message getMessage() {
+	public Message<?> getMessage() {
 		// TODO Auto-generated method stub
 		return this.message;
 	}

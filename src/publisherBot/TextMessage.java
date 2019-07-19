@@ -1,16 +1,15 @@
-package chatBoot;
+package publisherBot;
 
-public class TextMessage implements Message {
+public class TextMessage implements Message<String> {
 	private String value;
 	
 	public TextMessage(String value) {
 		this.setValue(value);
 	}
 	@Override
-	public Message value() {
+	public String value() {
 		// TODO Auto-generated method stub
-		System.out.println(getValue());
-		return this;
+		return getValue();
 	}
 	public String getValue() {
 		return value;
